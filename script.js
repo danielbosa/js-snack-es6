@@ -23,6 +23,7 @@ console.log(guestsList2)
 
 
 /*
+SNACK 2
 Abbiamo un elenco degli studenti di una facoltà, identificati da id, Nome e somma totale dei loro voti di esame...
 1. Per preparare l'aula di un nuovo corso, dobbiamo stampare le targhe col nome degli studenti: creare una lista contenente il loro nome tutto in maiuscolo
 ES (Marco della Rovere => MARCO DELLA ROVERE);
@@ -82,3 +83,24 @@ const studentsOver70and120 = students.filter((el)=>{
     return el.Grades > 70 && el.Id > 120;
 });
 console.log(studentsOver70and120);
+
+/*
+SNACK 3
+Creare un array di oggetti:
+Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
+Stampare in console la bici con peso minore utilizzando destructuring e template literal
+*/
+
+const bike = [
+    { model: "Bianchi Oltre XR4", weight: 6.8 },
+    { model: "Trek Madone SLR 9", weight: 6.5 },
+    { model: "Specialized S-Works Venge", weight: 6.7 },
+    { model: "Cervélo S5", weight: 6.3 },
+    { model: "Pinarello Dogma F12", weight: 6.9 }
+];
+
+const lowest = bike.reduce((previous, current) => {
+    return current.weight < previous.weight ? current : previous;
+  });
+  
+console.log(lowest);
