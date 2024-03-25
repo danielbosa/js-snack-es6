@@ -104,3 +104,31 @@ const lowest = bike.reduce((previous, current) => {
   });
   
 console.log(lowest);
+
+/*
+SNACK 4
+Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
+Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli subiti.
+Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+*/
+
+const squadreDiCalcio = [
+    { nome: "Juventus", puntiFatti: 0, falliSubiti: 0 },
+    { nome: "Inter", puntiFatti: 0, falliSubiti: 0 },
+    { nome: "Milan", puntiFatti: 0, falliSubiti: 0 },
+    { nome: "Roma", puntiFatti: 0, falliSubiti: 0 }
+];
+
+squadreDiCalcio.forEach((el)=>{
+    el.puntiFatti = RndNumberGen(1,100),
+    el.falliSubiti = RndNumberGen(1,50)
+})
+console.log(squadreDiCalcio)
+
+let newSquadreDiCalcio = squadreDiCalcio.map(({nome, falliSubiti}) => ({ nome, falliSubiti }));
+console.log(newSquadreDiCalcio)
+//mappo il mio array di obj iniziale in modo da creare un nuovo array di obj
+//cosa metto in funzione di callback del map? arrow function
+//come argomento di arrow function, metto obj letterale costituito dalle due chiavi che mi interessano: nome e falliSubiti. ({nome, falliSubiti})
+//cosa voglio che la arrow function mi restituisca? per ogni obj dell'array originale, un obj con due sole proprietà; quindi inserisco queste, in literal template (cioè tra parentesi tonde, il blocco costituito dalle graffe e le due proprietà: perché {nome, falliSubiti} è una sintassi di destrutturazione degli oggetti; sto dicendo a JavaScript di estrarre le proprietà nome e falliSubiti dall'oggetto passato e assegnarle a variabili con lo stesso nome. )
